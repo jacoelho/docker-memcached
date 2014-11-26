@@ -7,4 +7,4 @@ Usage
 -----
 
 set the variable **MEMCACHED_MEMORY** if you want to: 
-  - docker run -dd -e "MEMCACHED_MEMORY=1024" jacoelho/memcached
+  - docker run -d -e "MEMCACHED_MEMORY=1024" jacoelho/memcached
