@@ -1,8 +1,8 @@
 memcached 1.4.13
 ================
 
-  minimal debian wheezy image + memcached 1.4.13
-  size: 126.7 MB
+  - minimal debian wheezy image + memcached 1.4.13
+  - size: 126.7 MB
 
 Usage
 -----
