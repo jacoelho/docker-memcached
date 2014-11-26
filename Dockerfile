@@ -4,7 +4,7 @@ MAINTAINER Jose Coelho <jose.coelho@linkedcare.com>
 ENV MEMCACHED_VERSION 1.4.13-0.2+deb7u1
 ENV MEMCACHED_MEMORY 64
 
-RUN export DEBIAN_FRONT=noninteractive \
+RUN export DEBIAN_FRONTEND=noninteractive \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
     procps \
