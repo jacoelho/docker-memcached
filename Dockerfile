@@ -12,8 +12,10 @@ RUN export DEBIAN_FRONT=noninteractive \
   && apt-get install -y --no-install-recommends \
     procps \
     memcached=${MEMCACHED_VERSION} \
-  && apt-get clean \ 
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+  && apt-get clean autoclean \
+  && apt-get autoremove -y \
+  && rm -rf /var/lib/{apt,dpkg,cache,log}/ \
+  && rm -rf /tmp/* /var/tmp/* \
   && chmod 755 /*.sh
 
 EXPOSE 11211
