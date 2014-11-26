@@ -4,10 +4,7 @@ MAINTAINER Jose Coelho <jose.coelho@linkedcare.com>
 ENV MEMCACHED_VERSION 1.4.13-0.2+deb7u1
 ENV MEMCACHED_MEMORY 64
 
-ADD run.sh /run.sh
-
 RUN export DEBIAN_FRONT=noninteractive \
-  && export LC_ALL=C \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
     procps \
@@ -15,8 +12,11 @@ RUN export DEBIAN_FRONT=noninteractive \
   && apt-get clean autoclean \
   && apt-get autoremove -y \
   && rm -rf /var/lib/{apt,dpkg,cache,log}/ \
-  && rm -rf /tmp/* /var/tmp/* \
-  && chmod 755 /*.sh
+  && rm -rf /tmp/* /var/tmp/*
+
+ADD run.sh /run.sh
+
+RUN chmod 755 /*.sh
 
 EXPOSE 11211
 
